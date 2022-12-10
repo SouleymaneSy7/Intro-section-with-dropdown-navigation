@@ -1,0 +1,624 @@
+/* ==============
+        Base
+   ==============
+*/
+
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================
+        Variables
+   ==================
+*/
+
+:root {
+
+    /*           COLORS             */
+
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+
+    /*         FONTS FAMILY        */
+
+    --font-family-Epilogue: Epilogue, sans-serif;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+}
+
+/* ============================
+       Fonts Reset With REM
+   ============================
+*/
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* 
+    ================================
+       Reset Of Others Elements 
+    ================================
+*/
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--almost-black);
+}
+
+/* 
+    ============================
+        Customs of Elements
+    ============================
+*/
+
+body {
+
+    font-family: var(--font-family-Epilogue);
+    font-size: 1.8rem;
+    background-color: var(--almost-white);
+}
+
+.header-container {
+   padding: 3rem 4rem 0 4rem;
+   width: 100%;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation .logo {
+    margin-right: 6rem;
+    display: inline;
+}
+.navigation .logo-items img{
+    margin-top: 1rem;
+}
+
+.navigation .toggle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.toggle .navigation-items {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: auto;
+}
+
+.navigation-items li {
+    margin-right: 4rem;
+    position: relative;
+}
+
+.navigation-items a {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-500);
+    color: var(--medium-gray);
+    transition: color .4s ease-in;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+}
+
+.login-form .login {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-500);
+    color: var(--medium-gray);
+    transition: color .3s ease-in;
+}
+
+.login-form .register-btn {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-500);
+    color: var(--medium-gray);
+
+    padding: .7rem 1.5rem;
+    margin-left: 4rem;
+
+    border: .2rem solid var(--medium-gray);
+    border-radius: 1.5rem;
+    outline: none;
+    background-color: var(--almost-white);
+
+    transition: color .3s ;
+    cursor: pointer;
+}
+
+
+/* 
+    ================================
+            Hover of Elements 
+    ================================
+*/
+
+.toggle .navigation-items li a:hover, 
+.login-form a:hover,
+.login-form .register-btn:hover {
+    color: var(--almost-black);
+}
+
+
+.text-container .learn-more-btn:hover {
+    background-color: transparent;
+    color: var(--almost-black);
+}
+
+/* 
+    ================================
+            Drop-Down Customs 
+    ================================
+*/
+
+
+.drop-down-container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.drop-down-container .arrow{
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    
+    position: relative;
+    top: -.2rem;
+    right: 0;
+
+    border: .2rem solid var(--medium-gray);
+    border-top: transparent;
+    border-right: transparent;
+
+    transform: rotate(-45deg);
+    margin-left: 1rem;
+
+    transition: transform .5s ease-in-out;
+}
+.drop-down-menu {
+    display: none;
+
+    position: absolute;
+    top: 5rem;
+    left: 0;
+
+    padding: 2.5rem 0rem .5rem 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--almost-white);
+    box-shadow: 0 0 5rem  rgba(0, 0, 0, 0.2);
+
+    z-index: 1000000;
+}
+
+.drop-down-menu.menu_1 {
+    position: absolute;
+    top: 5rem;
+    left: -8.5rem;
+}
+.drop-down-menu.menu_2 {
+    position: absolute;
+    top: 5rem;
+    left: .5rem;
+    
+    width: 15rem;
+
+    padding: 2.5rem 0rem .5rem 2.5rem;
+}
+
+.drop-down-menu .drop-down_1 li a ,
+.drop-down-menu .drop-down_2 li a{
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2rem;
+}
+
+.drop-down-menu .drop-down_1 li a span
+{
+    margin-right: 1.9rem;
+}
+
+.drop-down-container.active + .drop-down-menu{
+    display: block;
+    transition: all .5s ease-in-out;
+}
+
+.drop-down-container.active .arrow {
+    transform: rotate(133deg);
+}
+
+
+/* 
+    ================================
+         Hamburger-Menu Customs 
+    ================================
+*/
+
+.hamburger-menu-container {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+
+    z-index: 1000;
+}
+.hamburger-menu::before {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: .5rem;
+    background-color: var(--almost-black);
+    transform: translateY(-1.3rem);
+    border-radius: .4rem;
+    transition: .4s ease-out;
+}
+
+.hamburger-menu::after {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: .5rem;
+    background-color: var(--almost-black);
+    transform: translateY(1.3rem);
+    box-shadow: 0 -1.3rem var(--almost-black);
+    border-radius: .4rem;
+    transition: .4s ease-out;
+}
+
+.hamburger-menu.active::before {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: .5rem;
+    background-color: var(--almost-black);
+    transform: translateY(0px) rotate(-45deg);
+    border-radius: .4rem;
+    transition: .4s ease-out;
+}
+.hamburger-menu.active::after {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: .5rem;
+    background-color: var(--almost-black);
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: none;
+    border-radius: .4rem;
+    transition: .4s ease-out;
+}
+
+
+/* 
+    ================================
+        Main contents Customs
+    ================================
+*/
+
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3rem 17rem 5rem 17rem;
+    width: 100%;
+    height: 100%;
+}
+
+.text-container h1 {
+    font-size: 7.5rem;
+    font-weight: var(--font-weight-700);
+    color: var(--almost-black);
+
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+
+    width: 49.7rem;
+}
+
+.text-container p {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-500);
+    color: var(--medium-gray);
+    margin-bottom: 5rem;
+
+    width: 45rem;
+}
+
+.text-container .learn-more-btn {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-700);
+    color: var(--almost-white);
+    letter-spacing: 1px;
+
+    background-color: var(--almost-black);
+    border-radius: 1rem;
+    border: .1rem solid var(--almost-black);
+
+    outline: none;
+    padding: 1.4rem 2.7rem;
+    margin-bottom: 8rem;
+
+    transition: background-color .3s ease-in,
+                color .3s ease-in;
+
+    cursor: pointer;
+}
+
+.client-img {
+    display: flex;
+    align-items: center;
+}
+
+.client-img a {
+    margin-right: 3rem;
+}
+
+.img-container {
+    width: 47rem;
+    height: 55rem;
+}
+
+.img-container img.desktop {
+    width: 100%;
+}
+
+.footer {
+    margin-left: 17rem;
+    margin-top: 1rem;
+}
+
+.footer .attribution {
+    display: flex;
+}
+
+.footer .attribution a {
+    font-size: 2rem;
+    font-weight: 600;
+    color: hsl(243deg 79% 68%);
+}
+
+
+/* Mobile img display none */
+.mobile {
+    display: none;
+}
+
+/* 
+    ================================
+         Media-Queries (375px)
+    ================================
+*/
+
+@media screen and (max-width: 73rem) {
+
+    body {
+        overflow: hidden;
+    }
+   
+    .hamburger-menu-container {
+        display: block;
+    }
+
+    .navigation .toggle {
+        position: fixed;
+        top: 0;
+        right: -200%;
+
+        width: 75%;
+        height: 100vh;
+        background-color: white;
+        box-shadow: -200px 0 0px rgba(0, 0, 0, 0.4);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        transition: .5s ;
+
+        z-index: 10;
+    }
+
+   
+    .header-container {
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Toggle active  */
+   .navigation .toggle.active {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .toggle .navigation-items {
+        display: block;
+
+        position: relative;
+        top: 12%;
+        left: 3rem;
+
+        margin-bottom: 4rem;
+    }
+
+    .navigation-items li {
+        margin-bottom: .5rem;
+    }
+
+
+
+    .toggle .login-form {
+        position: relative;
+        top: 10%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .login-form .login {
+        margin-bottom: 2rem;
+    }
+
+    .login-form .register-btn {
+        margin-left: 0;
+        width: 78%;
+        padding: 1rem 0 ;
+    }
+
+    .drop-down-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+        border-radius: none;
+    }
+
+    .drop-down-menu.menu_1 {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        margin-bottom: 0;
+    }
+
+    .drop-down-menu.menu_2 {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+
+    
+/* 
+    ================================
+        Main contents Customs
+    ================================
+*/
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: initial;
+    }
+
+    .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        padding: 2rem 0 0 ;
+    }
+
+    .img-container {
+        width: 37rem;
+        height: auto;
+    }
+
+    .img-container img.mobile {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .text-container {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .text-container h1 {
+        font-size: 3.5rem;
+        font-weight: var(--font-weight-700);
+        margin: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .text-container p {
+        text-align: center;
+        width: 100%;
+        padding: 0 2rem ;
+        margin-bottom: 5rem;
+    }
+
+    .text-container .learn-more-btn {
+        margin-bottom: 6rem;
+    }
+
+    .client-img {
+        width: 37.5rem;
+
+        display: flex;
+        justify-content: space-around;
+
+        
+    }
+
+    .client-img a {
+        margin: 0 1rem;
+    }
+
+    .client-img img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .text-container .learn-more-btn:hover {
+        background-color: transparent;
+        color: var(--almost-black);
+    }
+
+    .footer {
+        margin-left: 0;
+        margin-top: ;
+    }
+
+    .footer .attribution p {
+        margin: .2rem 0;
+    }
+    .footer .attribution {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

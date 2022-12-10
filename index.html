@@ -4,42 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <meta name="description" content="Un autre challenge de Front-end Mentor à accomplir avec le même redesign">
+  <meta name="author" content="Souleymane Sy">
+  <!-- FAVICON Links -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <!-- CSS Customs Links -->
+  <link rel="stylesheet" href="App/CSS/Custom.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
 </head>
 <body>
 
+  <!-- Header Containers Starts -->
+
+  <header class="header-container">
+    <!-- Navigation -->
+      <nav class="navigation">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#" class="logo-items"><img src="images/logo.svg" alt="Website Logo"></a>
+        </div>
+        <!-- hamburger toogle container -->
+
+        <div class="toggle">
+          <!-- Navigation Items -->
+          <ul class="navigation-items">
+            <li>
+              <a href="#" class="drop-down-container" >
+                Features <span class="arrow"></span>
+              </a>
+
+              <div class="drop-down-menu menu_1">
+                <ul class="drop-down drop-down_1">
+                  <li><a href="#"><span><img src="images/icon-todo.svg" alt="Todo-List Icons"></span> Todo-List</a></li>
+                  <li><a href="#"><span><img src="images/icon-calendar.svg" alt="Calendar Icons"></span> Calendar</a></li>
+                  <li><a href="#"><span><img src="images/icon-reminders.svg" alt="Reminders Icons"></span> Reminders</a></li>
+                  <li><a href="#"><span><img src="images/icon-planning.svg" alt="Planning Icons"></span> Planning</a></li>
+                </ul>
+              </div>  
+            </li>
+
+            <li>
+              <a href="#" class="drop-down-container">
+              Company <span class="arrow"></span>
+              </a>
+
+              <div class="drop-down-menu menu_2">
+                <ul class="drop-down drop-down_2">
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+
+          <!-- Login Form -->
+
+          <section class="login-form">
+            <a href="#" class="login">Login</a>
+
+            <button class="register-btn">Register</button>
+          </section>
+        </div>
+
+        <!-- Hambuger Menu -->
+        <div class="hamburger-menu-container">
+          <div class="hamburger-menu"></div>
+        </div>
+      </nav>
+  </header>
+
+  <!-- Header Containers Ends -->
 
 
+  <!-- Main contents Containers Starts -->
 
+  <main class="main-container">
+    <section class="text-container">
+      <h1>Make remote work</h1>
 
+      <p>
+        Get your team in sync, no matter your location. 
+        Streamline processes, 
+        create team rituals, and watch productivity soar.
+      </p>
 
+      <button class="learn-more-btn">Learn more</button>
 
+      <div class="client-img">
+        <a href="#"><img src="images/client-databiz.svg" alt="Databiz Client"></a>
+        <a href="#"><img src="images/client-audiophile.svg" alt="Databiz Client"></a>
+        <a href="#"><img src="images/client-meet.svg" alt="Databiz Client"></a>
+        <a href="#"><img src="images/client-maker.svg" alt="Databiz Client"></a>
+      </div>
+    </section>
 
+    <div class="img-container">
+      <img src="images/image-hero-desktop.png" alt="Webpage Images" class="desktop">
+      <img src="images/image-hero-mobile.png" alt="Webpage Images" class="mobile">
+    </div>
+  </main>
 
+  <footer class="footer">
+    <div class="attribution">
+      <p>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      </p>
 
-  
+      <p>
+        Coded by
+        <a href="#">Souleymane Sy</a>.
+      </p>
+    </div>
+  </footer>
 
-  <!-- Features
-  Company
-  Careers
-  About
+  <!-- Main contents Containers Ends -->
 
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more -->
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+  <script src="App/JS/app.js"></script>
 </body>
 </html>
